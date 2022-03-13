@@ -20,20 +20,16 @@ def main():
                 palindrome = palindrome.replace(c, "")
 
         #Creates a reversed copy of the palindrome to compare 
-        reversed = palindrome[::-1]
+        # reversed = palindrome[::-1]
 
-        #For loop  compares each character 1 by 1, if it fails at any point it exits the loop immediately
-        for n,c in enumerate(palindrome):
-            if n == int(len(palindrome)/2): #Added as it only needs to ensure the first half of the string doesn't fail
-                break
-            elif c != reversed[n]:
-                result = "Palindrome test: False"
-                break
-            else:
-                result = "Palindrome test: True"           
+        #Compares if the word given and it reversed match
+        if palindrome == palindrome[::-1]:
+            result = "True"
+        else:
+            result = "False"          
 
         #Tells the user if they they entered is or is not a palindrome
-        print(result)
+        print("Palindrome test:", result)
 
 #Main function runs on start up if this script is main script i.e. not called by another script
 if __name__ == "__main__":
